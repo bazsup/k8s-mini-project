@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banana-shop-api-deployment
+spec:
+  selector:
+    matchLabels:
+      app: banana-shop-api-deployment
+  template:
+    metadata:
+      labels:
+        app: banana-shop-api-deployment
+    spec:
+      containers:
+        - name: banana-shop-api
+          image: ghcr.io/bazsup/shop-api:v1
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080

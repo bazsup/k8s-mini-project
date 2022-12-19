@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shop-web-config
+data:
+  FRUIT_APP_TITLE: "🍌 Ba Na Na"
+  FRUIT_APP_NAME: "🍌 Ba Na Na Shop"
+  FRUIT_API_URL: "https://banana-shop-api.odds.team/api"

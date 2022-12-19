@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banana-shop-deployment
+spec:
+  selector:
+    matchLabels:
+      app: banana-shop-deployment
+  template:
+    metadata:
+      labels:
+        app: banana-shop-deployment
+    spec:
+      containers:
+        - name: banana-shop-web
+          image: ghcr.io/bazsup/shop-web:v1
+          imagePullPolicy: Never
+          envFrom:
+            - configMapRef:
+                name: shop-web-config
+          ports:
+            - containerPort: 80

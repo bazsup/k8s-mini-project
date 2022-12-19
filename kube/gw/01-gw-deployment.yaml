@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banana-shop-gw-deployment
+spec:
+  selector:
+    matchLabels:
+      app: banana-shop-gw-deployment
+  template:
+    metadata:
+      labels:
+        app: banana-shop-gw-deployment
+    spec:
+      containers:
+        - name: banana-shop-gw
+          image: nginx:alpine
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /etc/nginx/conf.d # mount nginx-conf volumn to /etc/nginx
+              name: shop-gw-config
+      volumes:
+        - name: shop-gw-config
+          configMap:
+            name: shop-gw-config # place ConfigMap `nginx-conf` on /etc/nginx
+            items:
+              - key: default.conf
+                path: default.conf

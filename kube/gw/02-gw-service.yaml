@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: banana-shop-gw-service
+spec:
+  selector:
+    app: banana-shop-gw-deployment
+  ports:
+    - port: 8080
+      targetPort: 80
+      protocol: TCP
