@@ -1,11 +1,11 @@
 ## Shop Web
 
 ```
-docker buildx build -t ghcr.io/bazsup/shop-web:v1 .
+docker buildx build --platform linux/amd64 -t ghcr.io/bazsup/shop-web:v2 .
 ```
 
 ```bash
-docker buildx build -t ghcr.io/bazsup/shop-api:v1 .
+docker buildx build --platform linux/amd64 -t ghcr.io/bazsup/shop-api:v2 .
 
 # Test products
 curl localhost:8080/products
