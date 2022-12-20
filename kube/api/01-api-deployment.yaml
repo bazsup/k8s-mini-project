@@ -14,6 +14,5 @@ spec:
       containers:
         - name: banana-shop-api
           image: ghcr.io/bazsup/shop-api:v1
-          imagePullPolicy: Never
           ports:
             - containerPort: 8080

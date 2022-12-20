@@ -14,7 +14,6 @@ spec:
       containers:
         - name: banana-shop-web
           image: ghcr.io/bazsup/shop-web:v1
-          imagePullPolicy: Never
           envFrom:
             - configMapRef:
                 name: shop-web-config
