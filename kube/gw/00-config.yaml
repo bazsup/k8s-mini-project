@@ -26,7 +26,7 @@ data:
       }
 
 
-      location /api/ {
+      location /api/v1/ {
         if ($request_method = OPTIONS ) {
           add_header 'Access-Control-Allow-Origin' * always;
           add_header 'Access-Control-Allow-Headers' *;
@@ -36,7 +36,7 @@ data:
         }
 
         proxy_pass http://banana-shop-api-service:8080/;
-        rewrite /api/(.*) /$1  break;
+        rewrite /api/v1/(.*) /$1  break;
 
       }
     }
