@@ -26,7 +26,7 @@ data:
       }
 
 
-      location /api {
+      location /api/ {
         if ($request_method = OPTIONS ) {
           add_header 'Access-Control-Allow-Origin' * always;
           add_header 'Access-Control-Allow-Headers' *;
