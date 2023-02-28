@@ -13,6 +13,6 @@ spec:
     spec:
       containers:
         - name: banana-shop-api
-          image: ghcr.io/bazsup/shop-api:v2
+          image: ghcr.io/bazsup/shop-api:v1
           ports:
             - containerPort: 8080

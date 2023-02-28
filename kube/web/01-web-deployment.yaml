@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: banana-shop-web
-          image: ghcr.io/bazsup/shop-web:v2
+          image: ghcr.io/bazsup/shop-web:v1
           envFrom:
             - configMapRef:
                 name: shop-web-config
